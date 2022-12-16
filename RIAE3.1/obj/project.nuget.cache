@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "8vLg4jWLccW4raT/y5XQzK8wvHzjXuXhXPJpwenWUMWxBzrxKDVzOAVKZWSg+bgT2oSnsqr2fryRHTXLy2oZXQ==",
+  "dgSpecHash": "CvU0e8sVD82vlz4YKLOaxccAv/xM7otIAM/zzGcAMRiMTnsvPl0lzShG8l1/UjYFQa651XJv7FlQwVhfzS+9NA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jtoledo\\source\\repos\\RIAE3.1\\RIAE3.1\\RIAE3.1.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\jtoledo\\Programs\\Proyect\\Back\\RIAE3.1\\RIAE3.1\\RIAE3.1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jtoledo\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.16\\microsoft.aspnetcore.jsonpatch.3.1.16.nupkg.sha512",
+    "C:\\Users\\jtoledo\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.16\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.16.nupkg.sha512",
+    "C:\\Users\\jtoledo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\jtoledo\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\jtoledo\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
+  ],
   "logs": []
 }
