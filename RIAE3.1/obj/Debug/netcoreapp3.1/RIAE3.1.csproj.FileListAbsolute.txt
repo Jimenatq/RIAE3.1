@@ -27,3 +27,9 @@ C:\Users\jtoledo\Programs\Proyect\Back\RIAE3.1\RIAE3.1\obj\Debug\netcoreapp3.1\R
 C:\Users\jtoledo\Programs\Proyect\Back\RIAE3.1\RIAE3.1\obj\Debug\netcoreapp3.1\RIAE3.1.dll
 C:\Users\jtoledo\Programs\Proyect\Back\RIAE3.1\RIAE3.1\obj\Debug\netcoreapp3.1\RIAE3.1.pdb
 C:\Users\jtoledo\Programs\Proyect\Back\RIAE3.1\RIAE3.1\obj\Debug\netcoreapp3.1\RIAE3.1.genruntimeconfig.cache
+C:\Users\jtoledo\Programs\Proyect\Back\RIAE3.1\RIAE3.1\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\jtoledo\Programs\Proyect\Back\RIAE3.1\RIAE3.1\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\jtoledo\Programs\Proyect\Back\RIAE3.1\RIAE3.1\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\jtoledo\Programs\Proyect\Back\RIAE3.1\RIAE3.1\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\jtoledo\Programs\Proyect\Back\RIAE3.1\RIAE3.1\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\jtoledo\Programs\Proyect\Back\RIAE3.1\RIAE3.1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

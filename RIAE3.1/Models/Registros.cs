@@ -5,7 +5,8 @@ namespace RIAE3._1.Models
     public class Registros
     {
         public int IdRegistro { get; set; }
-        public int IdParametro { get; set; }
+        public int IdParametroTipo { get; set; }
+        public int IdParametroSubtipo { get; set; }
         public float NroRecibo { get; set; }
         public DateTime Fecha { get; set; }
         public float ImporteTotalBoleta { get; set; }
