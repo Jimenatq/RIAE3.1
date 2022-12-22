@@ -10,8 +10,8 @@ namespace RIAE3._1.Models
         public decimal NroRecibo { get; set; }
         public DateTime Fecha { get; set; }
         public decimal ImporteTotalBoleta { get; set; }
-        public decimal Igv { get; set; }
-        public decimal MontoIgv { get; set; }
+        public decimal? Igv { get; set; }
+        public decimal? MontoIgv { get; set; }
         public string NombreEmpresa { get; set; }
         public string NotaInformativa { get; set; }
         public string NombreFactura { get; set; }

@@ -16,6 +16,7 @@ namespace RIAE3._1
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -27,9 +28,12 @@ namespace RIAE3._1
         public void ConfigureServices(IServiceCollection services)
         {
             //Activar CORS
-            services.AddCors(c =>
+            services.AddCors(options =>
             {
-                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+                options.AddDefaultPolicy(policy =>
+                                  {
+                                      policy.WithOrigins("http://localhost:8080").AllowAnyHeader().AllowAnyMethod();
+                                  });
             });
 
             //JSON serializer
@@ -44,9 +48,7 @@ namespace RIAE3._1
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            //activar CORS
-            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyMethod());
-
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -57,6 +59,8 @@ namespace RIAE3._1
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {

@@ -67,8 +67,22 @@ namespace RIAE3._1.Controllers
                     myCommand.Parameters.AddWithValue("@NroRecibo", registros.NroRecibo);
                     myCommand.Parameters.AddWithValue("@Fecha", registros.Fecha);
                     myCommand.Parameters.AddWithValue("@ImporteTotalBoleta", registros.ImporteTotalBoleta);
-                    myCommand.Parameters.AddWithValue("@Igv", registros.Igv);
-                    myCommand.Parameters.AddWithValue("@MontoIgv", registros.MontoIgv);
+                    if (registros.Igv == null)
+                    {
+                        myCommand.Parameters.AddWithValue("@Igv", DBNull.Value);
+                    }
+                    else
+                    {
+                        myCommand.Parameters.AddWithValue("@Igv", registros.Igv);
+                    }
+                    if (registros.MontoIgv == null)
+                    {
+                        myCommand.Parameters.AddWithValue("@MontoIgv", DBNull.Value);
+                    }
+                    else
+                    {
+                        myCommand.Parameters.AddWithValue("@MontoIgv", registros.MontoIgv);
+                    }
                     if (String.IsNullOrEmpty(registros.NombreEmpresa))
                     {
                         myCommand.Parameters.AddWithValue("@NombreEmpresa", DBNull.Value);

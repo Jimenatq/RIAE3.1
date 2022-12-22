@@ -21,7 +21,7 @@ namespace RIAE3._1.Controllers
         public JsonResult GetTipos()
         {
             string query = @"
-                            select Codigo, Descripcion
+                            select IdParametro, Codigo, Descripcion
                             from dbo.ParametroTesoreria
                             where IdTipoParametro = 1;";
             DataTable table = new DataTable();
@@ -47,7 +47,7 @@ namespace RIAE3._1.Controllers
         public JsonResult GetSubtiposIP()
         {
             string query = @"
-                            select Codigo, Descripcion
+                            select IdParametro, Codigo, Descripcion
                             from dbo.ParametroTesoreria
                             where IdTipoParametro = 2;";
             DataTable table = new DataTable();
@@ -73,7 +73,7 @@ namespace RIAE3._1.Controllers
         public JsonResult GetSubtiposFR()
         {
             string query = @"
-                            select Codigo, Descripcion
+                            select IdParametro, Codigo, Descripcion
                             from dbo.ParametroTesoreria
                             where IdTipoParametro = 3;";
             DataTable table = new DataTable();
