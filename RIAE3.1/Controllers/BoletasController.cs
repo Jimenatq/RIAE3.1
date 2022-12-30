@@ -90,6 +90,7 @@ namespace RIAE3._1.Controllers
                 myCon.Open();
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
+                    myCommand.Parameters.AddWithValue("@IdBoleta", boletas.IdBoleta);
                     myCommand.Parameters.AddWithValue("@IdRegistro", boletas.IdRegistro);
                     myCommand.Parameters.AddWithValue("@IdParametro", boletas.IdParametro);
                     myCommand.Parameters.AddWithValue("@ImporteUnitarioClasificador", boletas.ImporteUnitarioClasificador);
