@@ -32,7 +32,7 @@ namespace RIAE3._1
             {
                 options.AddDefaultPolicy(policy =>
                                   {
-                                      policy.WithOrigins("http://localhost:8080").AllowAnyHeader().AllowAnyMethod();
+                                      policy.WithOrigins("http://localhost:8081").AllowAnyHeader().AllowAnyMethod();
                                   });
             });
 

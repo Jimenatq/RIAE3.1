@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jtoledo\\Programs\\Proyect\\Back\\RIAE3.1\\RIAE3.1\\RIAE3.1.csproj": {}
+    "C:\\Users\\jtoledo\\Desktop\\Proyect\\back\\RIAE3.1\\RIAE3.1\\RIAE3.1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jtoledo\\Programs\\Proyect\\Back\\RIAE3.1\\RIAE3.1\\RIAE3.1.csproj": {
+    "C:\\Users\\jtoledo\\Desktop\\Proyect\\back\\RIAE3.1\\RIAE3.1\\RIAE3.1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jtoledo\\Programs\\Proyect\\Back\\RIAE3.1\\RIAE3.1\\RIAE3.1.csproj",
+        "projectUniqueName": "C:\\Users\\jtoledo\\Desktop\\Proyect\\back\\RIAE3.1\\RIAE3.1\\RIAE3.1.csproj",
         "projectName": "RIAE3.1",
-        "projectPath": "C:\\Users\\jtoledo\\Programs\\Proyect\\Back\\RIAE3.1\\RIAE3.1\\RIAE3.1.csproj",
+        "projectPath": "C:\\Users\\jtoledo\\Desktop\\Proyect\\back\\RIAE3.1\\RIAE3.1\\RIAE3.1.csproj",
         "packagesPath": "C:\\Users\\jtoledo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jtoledo\\Programs\\Proyect\\Back\\RIAE3.1\\RIAE3.1\\obj\\",
+        "outputPath": "C:\\Users\\jtoledo\\Desktop\\Proyect\\back\\RIAE3.1\\RIAE3.1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jtoledo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -55,11 +55,16 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.25, 3.1.25]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -68,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }

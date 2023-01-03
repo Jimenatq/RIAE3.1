@@ -258,7 +258,7 @@ namespace RIAE3._1.Controllers
                 }
             }
 
-            return new JsonResult("Registro agregado con exito");
+            return new JsonResult("Registro añadido con exito");
         }
 
         [HttpPut]
