@@ -99,7 +99,7 @@ namespace RIAE3._1.Controllers
         public JsonResult GetClasificadores()
         {
             string query = @"
-                            select Codigo, CodClasificadorArea, CodClasificadorExterno, Descripcion 
+                            select IdParametro, Codigo, CodClasificadorArea, CodClasificadorExterno, Descripcion 
                             from dbo.ParametroTesoreria
                             where IdTipoParametro = 4 or  IdTipoParametro= 5;";
             DataTable table = new DataTable();
