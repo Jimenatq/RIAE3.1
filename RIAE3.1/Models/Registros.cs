@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RIAE3._1.Models
 {
@@ -31,5 +32,7 @@ namespace RIAE3._1.Models
         public DateTime? FechaCreacion { get; set; }
         public string UsuarioModificacion { get; set; }
         public DateTime? FechaModificacion { get; set; }
+        public int IdParametro { get; set; }
+        public decimal ImporteUnitarioClasificador { get; set; }
     }
 }

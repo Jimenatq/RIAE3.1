@@ -5,6 +5,7 @@ using RIAE3._1.Models;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace RIAE3._1.Controllers
 {
@@ -22,24 +23,26 @@ namespace RIAE3._1.Controllers
         public JsonResult Get()
         {
             string query = @"
-                            select IdRegistro, IdParametroTipo, case IdParametroTipo when 1 then 'Ingresos Propios'
+                            select dbo.Registros.IdRegistro, IdParametroTipo, case IdParametroTipo when 1 then 'Ingresos Propios'
                             when 2 then 'Fondo Rotatorio' end as 'NombreTipo', IdParametroSubtipo,
 							case IdParametroSubtipo when 3 then 'Recaudación'
                             when 4 then 'Penalidad' when 5 then 'Factura'
-							when 6 then 'Protocolo' when 7 then 'Detracción'
-							when 8 then 'Otros servicios' when 9 then 'Otros ingresos'
-							when 10 then 'Ingresos diversos' when 11 then 'Recaudación por efectivo de caja'
-							when 12 then 'Pago de facturas - Cheque' when 13 then 'Pago de facturas - Nota de Abono'
-							when 14 then 'Otros pagos' end as 'NombreSubtipo', NroRecibo,
-                            convert (varchar(10), Fecha, 103) as Fecha, ImporteTotalBoleta, Igv, MontoIgv,
-                            NombreEmpresa,NotaInformativa, NombreFactura, convert (varchar(10), FechaGlosa, 103)
+                            when 6 then 'Protocolo' when 7 then 'Detracción'
+                            when 8 then 'Otros servicios' when 9 then 'Otros ingresos'
+                            when 10 then 'Ingresos diversos' when 11 then 'Recaudación por efectivo de caja'
+                            when 12 then 'Pago de facturas - Cheque' when 13 then 'Pago de facturas - Nota de Abono'
+                            when 14 then 'Otros pagos' end as 'NombreSubtipo', NroRecibo,
+                            convert(varchar(10), Fecha, 103) as Fecha, ImporteTotalBoleta, Igv, MontoIgv,
+                            NombreEmpresa,NotaInformativa, NombreFactura, convert(varchar(10), FechaGlosa, 103)
                             as FechaGlosa, ImporteDeposito, ImporteTotalTipoIP, ImporteTotalTipoFR, NroVoucher,
                             MontoVoucher, NroCheque, MontoCheque, NroNotaAbono, MontoNotaAbono, NombreBanco,
-                            TextoGlosa, UsuarioCreacion, convert (varchar(10), FechaCreacion, 103) as FechaCreacion,
-                            UsuarioModificacion, convert (varchar(10), FechaModificacion, 103) as FechaModificacion
-                            from dbo.Registros
-                            
+                            TextoGlosa, UsuarioCreacion, convert(varchar(10), FechaCreacion, 103) as FechaCreacion,
+                            UsuarioModificacion, convert(varchar(10), FechaModificacion, 103) as FechaModificacion,
+                            IdBoleta, IdParametro, ImporteUnitarioClasificador
+                            from dbo.Registros, dbo.Boletas
+							WHERE dbo.Registros.IdRegistro = dbo.Boletas.IdRegistro;
                             ";
+                            
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("RiaeAppConex");
             SqlDataReader myReader;
@@ -69,6 +72,9 @@ namespace RIAE3._1.Controllers
                             @ImporteTotalTipoFR, @NroVoucher, @MontoVoucher, @NroCheque, @MontoCheque,
                             @NroNotaAbono, @MontoNotaAbono, @NombreBanco, @TextoGlosa, @UsuarioCreacion,
                             @FechaCreacion, @UsuarioModificacion, @FechaModificacion)
+                            declare @IdRegistro int = SCOPE_IDENTITY();
+                            insert into dbo.Boletas
+                            values (@IdRegistro, @IdParametro, @ImporteUnitarioClasificador)
                             ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("RiaeAppConex");
@@ -251,6 +257,8 @@ namespace RIAE3._1.Controllers
                     {
                         myCommand.Parameters.AddWithValue("@FechaModificacion", registros.FechaModificacion);
                     }
+                    myCommand.Parameters.AddWithValue("@IdParametro", registros.IdParametro);
+                    myCommand.Parameters.AddWithValue("@ImporteUnitarioClasificador", registros.ImporteUnitarioClasificador);
                     myReader = myCommand.ExecuteReader();
                     table.Load(myReader);
                     myReader.Close();
@@ -258,10 +266,10 @@ namespace RIAE3._1.Controllers
                 }
             }
 
-            return new JsonResult("Registro añadido con exito");
+            return new JsonResult("Registro con boleta añadido con exito");
         }
 
-        [HttpPut]
+            [HttpPut]
         public JsonResult Put(Registros registros)
         {
             string query = @"
