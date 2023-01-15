@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 using System.Data;
 using RIAE3._1.Models;
+using RIAE3._1.Repository;
 using Microsoft.Win32;
 
 namespace RIAE3._1.Controllers
@@ -46,7 +47,7 @@ namespace RIAE3._1.Controllers
         [HttpPost]
         public JsonResult Post(Boletas boletas)
         {
-            string query = @"
+            /*string query = @"
                             insert into dbo.Boletas
                             values (@IdRegistro, @IdParametro, @ImporteUnitarioClasificador)
                             ";
@@ -66,9 +67,9 @@ namespace RIAE3._1.Controllers
                     myReader.Close();
                     myCon.Close();
                 }
-            }
+            }*/
 
-            return new JsonResult("Boleta agregada con exito");
+            return registrarBoleta(boletas); //new JsonResult("Boleta agregada con exito");
         }
 
         [HttpPut]
